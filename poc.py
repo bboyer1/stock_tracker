@@ -2,11 +2,16 @@ import yfinance as yf
 
 import matplotlib.pyplot as plt
 
+TICKER = "MSFT"
 
-msft = yf.Ticker("MSFT")
+
+tick = yf.Ticker(TICKER)
 
 # get stock info
-hist = (msft.history("max"))["Open"]
+hist = (tick.history("max"))["Open"]
 
 plt.plot(hist)
+plt.ylabel("Stock Price")
+plt.xlabel("Dates")
+plt.title(TICKER)
 plt.show()
